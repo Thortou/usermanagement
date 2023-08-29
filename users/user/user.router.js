@@ -27,8 +27,8 @@ function errHandler(err, req, res, next) {
       res.json({status:'err', message:'Img too lagre'})
    }
 }
-// app.use(errHandler);
-
+// app.use(errHandler); 
+ 
 router.post('/create',upload.single('image'), controller.create);
 router.put('/update', controller.update);
 router.get('/checkpass', controller.checkpass);

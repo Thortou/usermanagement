@@ -33,8 +33,9 @@ const district = {
                 if (err) {
                     console.log("Error waiting....", err);
                     return res.status(400).json({ message: "No sucess.." });
+                }else{
+                    res.json({status:200, message: "ບັນທຶກສຳເລັດ..."})
                 }
-                return res.status(201).json({ message: "ບັນທຶກສຳເລັດ..." });
             });
     },
 

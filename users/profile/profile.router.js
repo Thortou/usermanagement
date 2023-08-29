@@ -28,17 +28,22 @@ let upload = multer({
 }
 }) 
 
-
+ 
 router.post('/create',controller.create); //api insert into 
 router.get('/', controller.findeAll); //api select information all
-router.get('/:ProfileId', controller.findeOne); // api select information by ID
+router.get('/:UserId', controller.findeOne); // api select information by ID
 router.put('/update', controller.updateprofile); // api Update information of Profiles
 router.delete('/delete/:ProfileId', controller.DeleteUserAndeProfiles); // api Delete information of Profiles
 router.put('/update/img',upload.single('image'), controller.updateOnly)
 router.put('/update/img/name', controller.updateFirstName)
-
+ 
 router.get("/findeimg/:ProfileId",  controller.findeImg); 
 router.get("/getdistrict/:ProvinceId",  controller.getdistrict);
+router.get("/findall/data", controller.findeAllProfile);
 // router.get("/getimg", controller.getimg);
 
+router.put('/insert', controller.insert)
+router.get('/select/findMax', controller.findeAllByNewYear)
+router.get('/select/person/:UserId', controller.findeAllByNewYear_by_useris)
+router.get('/select/teacherroom', controller.teacherroomOnly)
 module.exports = router //export file router to use in file index.js
